@@ -1,0 +1,22 @@
+footer {
+  width: 100%;
+}
+.f_contents {
+  display: flex;
+  justify-content: space-around;
+  background-color: pink;
+}
+.f_contents > li {
+  padding: 10px;
+  background-color: red;
+}
+/* icon 一個ずつの範囲 */
+.f_list_content {
+  background-color: aqua;
+}
+
+/* SVG(アイコン) */
+.f_list_content > li {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/components/reset.css" />
+    <link rel="stylesheet" href="./src/components/header.css" />
+    <link rel="stylesheet" href="./src/components/main.css" />
+    <link rel="stylesheet" href="./src/components/footer.css" />
+    <title>Document</title>
+    <style>
+      input {
+        width: 250px;
+        height: 30px;
+        border: none;
+        outline: none;
+        padding-left: 5px;
+        border-radius: 3px;
+      }
+      .login_btn {
+        color: white;
+        margin-left: 25px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+      }
+      .btn_new {
+        background-color: rgba(63, 209, 75, 0.54);
+      }
+      .login_from_group {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <p class="h_title">IDEAL</p>
+    </header>
+
+    <!-- main -->
+    <main>
+      <div class="main_contents">
+        <h3 class="login_title"></h3>
+        <div class="modal">
+          <form name="login_form" class="login_from">
+            <div class="login_form_top">
+              <p>登録</p>
+            </div>
+            <div class="login_form_btm">
+              <!-- メールアドレス -->
+              <div class="login_from_group">
+                <p class="login_text">メールアドレス</p>
+                <input
+                  type="id"
+                  name="mail"
+                  placeholder="メールアドレスを入力してください"
+                />
+              </div>
+              <br />
+              <!-- パスワード -->
+              <div class="login_from_group">
+                <p class="login_text">パスワード</p>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="パスワードを入力してください"
+                />
+              </div>
+              <br />
+              <!-- 再パスワード -->
+              <div class="login_from_group">
+                <p class="login_text">再パスワード</p>
+                <input
+                  type="password"
+                  name="re_password"
+                  placeholder="パスワードを入力してください"
+                />
+              </div>
+              <br />
+              <!-- 名前 -->
+              <div class="login_from_group">
+                <p class="login_text">名前(本名)</p>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="名前を入力してください"
+                />
+              </div>
+              <br />
+              <!-- 郵便番号 -->
+              <div class="login_from_group">
+                <p class="login_text">郵便番号</p>
+                <input
+                  type="text"
+                  name="postal_code"
+                  minlength="7"
+                  maxlength="8"
+                  placeholder="郵便番号を入力してください"
+                />
+              </div>
+              <br />
+              <!-- 住所 -->
+              <div class="login_from_group">
+                <p class="login_text">住所</p>
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="住所を入力してください"
+                />
+              </div>
+              <br />
+              <!-- 電話番号 -->
+              <div class="login_from_group">
+                <p class="login_text">電話番号</p>
+                <input
+                  type="tel"
+                  name="tel"
+                  placeholder="電話番号を入力してください"
+                />
+              </div>
+            </div>
+
+            <button type="submit" class="btn login_btn">確認</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer></footer>
+  </body>
+</html>

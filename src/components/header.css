@@ -1,0 +1,11 @@
+/* header */
+header {
+  width: 100%;
+  height: 110px;
+  background-color: black;
+}
+.h_title {
+  color: white;
+  padding: 35px;
+  font-size: 25px;
+}

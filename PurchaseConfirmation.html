@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/components/reset.css" />
+    <link rel="stylesheet" href="./src/components/header.css" />
+    <link rel="stylesheet" href="./src/components/main.css" />
+    <link rel="stylesheet" href="./src/components/footer.css" />
+    <title>Document</title>
+    <style></style>
+  </head>
+
+  <style>
+    .cart_title {
+      color: rgb(76, 47, 221);
+      font-size: 18px;
+      font-weight: bold;
+    }
+    /* このページ特有 */
+    .PurchaseConfirmation_box {
+      height: 120px;
+      padding: 25px;
+    }
+    .PurchaseConfirmation_box_title {
+      font-size: 20px;
+      padding-bottom: 5px;
+    }
+
+    .buy_box_terms {
+    }
+  </style>
+  <body>
+    <!-- header -->
+    <header>
+      <p class="h_title">IDEAL</p>
+    </header>
+
+    <!-- main -->
+    <main>
+      <div class="main_contents">
+        <h3 class="page_title">注文内容</h3>
+        <p class="main_coin">小計 ¥11111111</p>
+
+        <!-- box -->
+        <div class="main_cart_box">
+          <div class="PurchaseConfirmation_box">
+            <p class="PurchaseConfirmation_box_title">保井アコム</p>
+            <p class="PurchaseConfirmation_box_sub">
+              お届け先：大阪府河内長野市貴望ヶ丘24-7
+            </p>
+          </div>
+        </div>
+
+        <!-- box -->
+        <div class="main_cart_box">
+          <div class="PurchaseConfirmation_box">
+            <p class="PurchaseConfirmation_box_title">保井アコム</p>
+            <p class="PurchaseConfirmation_box_sub">VISA 下4桁 0000</p>
+            <p class="PurchaseConfirmation_box_sub">
+              分割・リボも可能（状況により異なります）
+            </p>
+          </div>
+        </div>
+
+        <!-- box -->
+        <div class="main_cart_box">
+          <div class="PurchaseConfirmation_box">
+            <p class="PurchaseConfirmation_box_title">持ち帰り方法</p>
+            <p class="PurchaseConfirmation_box_sub">HIKARU運送</p>
+          </div>
+        </div>
+
+        <div class="buy_box">
+          <div class="buy_box_terms">
+            『購入確定』ボタンを押してご注文いただくことで、お客様は当サイトの
+            <a href="">各種規約、 プライバシー規約</a
+            >および当サイト上の販売条件に同意の上、商品をご注文されたことになります。
+          </div>
+        </div>
+
+        <!-- 1個の商品 -->
+        <div class="main_cart_box">
+          <div class="main_cart_box_left">
+            <img
+              src="./src/img/image.png"
+              class="main_cart_box_img"
+              alt=""
+              width="150 "
+              height="150"
+            />
+          </div>
+          <div class="main_cart_box_right">
+            <p class="cart_title">sdaa</p>
+            <p>PINK</p>
+            <p>SIZE:M</p>
+          </div>
+          <div class="main_cart_box_btn">
+            <!-- <button type="button">１</button> -->
+            <button type="button">1｜＋</button>
+          </div>
+        </div>
+
+        <div class="btn_area">
+          <div class="btn">
+            <a href="#">購入確定</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <ul class="f_contents">
+        <div class="f_list_content">
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9" />
+              <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6" />
+            </svg>
+          </li>
+          <li>ホーム</li>
+        </div>
+
+        <div class="f_list_content">
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="10" r="3" />
+              <path
+                d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"
+              />
+            </svg>
+          </li>
+          <li>フロアマップ</li>
+        </div>
+
+        <div class="f_list_content">
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="10" cy="20.5" r="1" />
+              <circle cx="18" cy="20.5" r="1" />
+              <path
+                d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"
+              />
+            </svg>
+          </li>
+          <li>カート</li>
+        </div>
+
+        <div class="f_list_content">
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </li>
+          <li>マイページ</li>
+        </div>
+      </ul>
+    </footer>
+  </body>
+</html>
