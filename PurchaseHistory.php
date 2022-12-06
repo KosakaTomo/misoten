@@ -3,11 +3,6 @@ $dsn = "mysql:host=localhost;dbname=ideal;charset=utf8";
 $username = "root";
 $password = "";
 
-// 小計
-$sumVal = 0;
-
-
-$a = 0;
 try {
   $db = new PDO($dsn, $username, $password);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -28,6 +23,7 @@ try {
     $status[] = $row["status"];
     $method[] = $row["method"];
     $complete = $row["complete"];
+    $boughtArray[] = [$row["id"], $row["member_id"], $row["date"], $row["status"], $row["method"], $row["complete"]];
   }
 
   for ($i = 1; $i <= count($id); $i++) {
@@ -44,6 +40,7 @@ try {
       $productId[] = $row["product_id"];
       $price[] = $row["price"];
       $quantity[] = $row["quantity"];
+      $cartArray[] = [$row["cart_id"], $row["shop_id"], $row["product_id"], $row["price"], $row["quantity"]];
     }
   }
   for ($j = 1; $j <= count($shopId); $j++) {
@@ -62,6 +59,7 @@ try {
       $detail[] = $row["detail"];
       $stock[] = $row["stock"];
       $taxId[] = $row["tax_id"];
+      $detailArray[] = [$row["name"], $row["category"], $row["size"], $row["detail"], $row["stock"], $row["tax_id"]];
     }
   }
 } catch (PDOException $ex) {
@@ -70,9 +68,6 @@ try {
   $db = null;
 }
 
-for ($i = 0; $i <= count($price) - 1; $i++) {
-  $sumVal = $sumVal + $price[$i];
-}
 ?>
 
 <!DOCTYPE html>
@@ -154,67 +149,38 @@ for ($i = 0; $i <= count($price) - 1; $i++) {
     <div class="main_contents">
       <h3 class="page_title main_history_title">購入履歴</h3>
       <?php // 異なる日付の数ループ
-        for($d=0;$d<=count($date)-1;$d++){
+      for ($d = 0; $d <= count($date) - 1; $d++) {
+        // 小計
+        $sumVal[$d] = 0;
+        for ($s = 0; $s <= count($cartId) - 1; $s++) {
+          if ($id[$d] == $cartId[$s]) {
+            $sumVal[$d] = $sumVal[$d] + $price[$s];
+          }
+        }
       ?>
-      <p class="main_coin main_history_day"><?php echo $date[$d]; ?></p>
-      <p class="main_contents_history_en">小計 ￥<?php echo $sumVal; ?></p>
-      <!-- 1個の商品 -->
-      <?php for ($i = 0; $i <= count($name) - 1; $i++) { ?>
-        <?php // 日付違う時の処理 
-          if(){ ?>
-        <div class="main_cart_box">
-          <div class="main_cart_box_left">
-            <img src="./src/img/image.png" class="main_cart_box_img" alt="" width="150 " height="150" />
-          </div>
-          <div class="main_cart_box_right">
-            <p class="cart_title"><?php echo $name[$i]; ?></p>
-            <p><?php echo $size[$i]; ?></p>
-            <p><?php echo $price[$i]; ?></p>
-          </div>
-        </div>
-        <?php }else{ ?>
-        <?php } ?>
-      <?php } ?>
-      <!-- <div class="main_cart_box">
-          <div class="main_cart_box_left">
-            <img
-              src="./src/img/image.png"
-              class="main_cart_box_img"
-              alt=""
-              width="150 "
-              height="150"
-            />
-          </div>
-          <div class="main_cart_box_right">
-            <p class="cart_title">sdaa</p>
-            <p>PINK</p>
-            <p>SIZE:M</p>
-          </div>
-        </div> -->
-        <?php } ?>
-      <!-- 2個目 -->
-      <!-- <p class="main_coin main_history_day">2022/11/5</p>
-      <p class="main_contents_history_en">小計 ￥60,590</p>
-      <div class="main_cart_box">
-        <div class="main_cart_box_left">
-          <img src="./src/img/image.png" class="main_cart_box_img" alt="" width="150 " height="150" />
-        </div>
-        <div class="main_cart_box_right">
-          <p class="cart_title">sdaa</p>
-          <p>PINK</p>
-          <p>SIZE:M</p>
-        </div>
-      </div>
-      <div class="main_cart_box">
-        <div class="main_cart_box_left">
-          <img src="./src/img/image.png" class="main_cart_box_img" alt="" width="150 " height="150" />
-        </div>
-        <div class="main_cart_box_right">
-          <p class="cart_title">sdaa</p>
-          <p>PINK</p>
-          <p>SIZE:M</p>
-        </div>
-      </div> -->
+        <p class="main_coin main_history_day"><?php echo $date[$d]; ?></p>
+        <p class="main_contents_history_en">小計 ￥<?php echo $sumVal[$d]; ?></p>
+
+        <?php
+        // 1日分
+        for ($c = 0; $c <= count($cartId) - 1; $c++) {
+          if ($id[$d] == $cartId[$c]) {
+        ?>
+            <div class="main_cart_box">
+              <div class="main_cart_box_left">
+                <img src="./src/img/image.png" class="main_cart_box_img" alt="" width="150 " height="150" />
+              </div>
+              <div class="main_cart_box_right">
+                <p class="cart_title"><?php echo $name[$c]; ?></p>
+                <p><?php echo $size[$c]; ?></p>
+                <p><?php echo $price[$c]; ?></p>
+              </div>
+            </div>
+      <?php
+          }
+        }
+      }
+      ?>
     </div>
   </main>
 
