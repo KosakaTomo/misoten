@@ -48,11 +48,11 @@ try {
     // 商品IDから詳細取得
     $sql = "SELECT * FROM products WHERE id = :product_id";
 
-    $stmtDetail = $db->prepare($sql);
-    $stmtDetail->bindValue(":product_id", $productId[$j - 1], PDO::PARAM_STR);
-    $result = $stmtDetail->execute();
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(":product_id", $productId[$j - 1], PDO::PARAM_STR);
+    $result = $stmt->execute();
 
-    while ($row = $stmtDetail->fetch()) {
+    while ($row = $stmt->fetch()) {
       $name[] = $row["name"];
       $category[] = $row["category"];
       $size[] = $row["size"];
